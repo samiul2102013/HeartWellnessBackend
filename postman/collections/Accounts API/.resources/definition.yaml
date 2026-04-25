@@ -1,0 +1,28 @@
+$kind: collection
+name: 'Accounts API'
+description: 'Authentication and account management endpoints for the HartWellness Backend Accounts API.'
+variables:
+  - key: baseUrl
+    value: 'http://localhost:8000'
+  - key: username
+    value: 'testuser'
+  - key: email
+    value: 'test@example.com'
+  - key: firstName
+    value: 'Test'
+  - key: lastName
+    value: 'User'
+  - key: phoneNumber
+    value: '+10000000000'
+  - key: password
+    value: 'Password123!'
+  - key: newPassword
+    value: 'NewPassword123!'
+  - key: refreshToken
+    value: ''
+  - key: accessToken
+    value: ''
+  - key: adminAccessToken
+    value: ''
+  - key: userId
+    value: '1'

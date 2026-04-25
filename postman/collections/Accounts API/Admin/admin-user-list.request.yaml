@@ -1,0 +1,38 @@
+$kind: http-request
+name: 'Admin User List'
+method: GET
+url: '{{baseUrl}}/api/admin/users/'
+order: 1000
+auth:
+  type: bearer
+  credentials:
+    - key: token
+      value: '{{adminAccessToken}}'
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 200", function () {
+        pm.response.to.have.status(200);
+      });
+      
+      const jsonData = pm.response.json();
+      
+      ["count", "next", "previous", "results"].forEach((field) => {
+        pm.test(`Paginated response has ${field}`, function () {
+          pm.expect(jsonData).to.have.property(field);
+        });
+      });
+      
+      pm.test("Results is an array", function () {
+        pm.expect(jsonData.results).to.be.an("array");
+      });
+      
+      if (Array.isArray(jsonData.results) && jsonData.results.length > 0) {
+        const firstUser = jsonData.results[0];
+        ["id", "username", "email", "first_name", "last_name", "phone_number", "avatar", "plan", "role", "is_active", "created_at"].forEach((field) => {
+          pm.test(`First result has ${field}`, function () {
+            pm.expect(firstUser).to.have.property(field);
+          });
+        });
+      }

@@ -1,0 +1,38 @@
+$kind: http-request
+method: POST
+url: '{{baseUrl}}/api/auth/register/'
+order: 1000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "username": "{{username}}",
+      "email": "{{email}}",
+      "first_name": "{{firstName}}",
+      "last_name": "{{lastName}}",
+      "phone_number": "{{phoneNumber}}",
+      "password": "{{password}}",
+      "password2": "{{password}}"
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 201", function () {
+        pm.response.to.have.status(201);
+      });
+      
+      const jsonData = pm.response.json();
+      
+      ["id", "username", "email", "first_name", "last_name", "phone_number"].forEach((field) => {
+        pm.test(`Response has ${field}`, function () {
+          pm.expect(jsonData).to.have.property(field);
+        });
+      });
+      
+      if (jsonData && jsonData.id !== undefined && jsonData.id !== null) {
+        pm.environment.set("userId", String(jsonData.id));
+      }

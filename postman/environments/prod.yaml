@@ -1,0 +1,50 @@
+name: Production
+values:
+  - key: baseUrl
+    value: 'https://api.example.com'
+    enabled: true
+    type: default
+  - key: username
+    value: ''
+    enabled: true
+    type: default
+  - key: email
+    value: ''
+    enabled: true
+    type: default
+  - key: firstName
+    value: ''
+    enabled: true
+    type: default
+  - key: lastName
+    value: ''
+    enabled: true
+    type: default
+  - key: phoneNumber
+    value: ''
+    enabled: true
+    type: default
+  - key: password
+    value: ''
+    enabled: true
+    type: default
+  - key: newPassword
+    value: ''
+    enabled: true
+    type: default
+  - key: accessToken
+    value: ''
+    enabled: true
+    type: default
+  - key: refreshToken
+    value: ''
+    enabled: true
+    type: default
+  - key: adminAccessToken
+    value: ''
+    enabled: true
+    type: default
+  - key: userId
+    value: ''
+    enabled: true
+    type: default

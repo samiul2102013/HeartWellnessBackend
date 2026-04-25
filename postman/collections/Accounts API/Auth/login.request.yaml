@@ -1,0 +1,38 @@
+$kind: http-request
+method: POST
+url: '{{baseUrl}}/api/auth/login/'
+order: 2000
+headers:
+  - key: Content-Type
+    value: application/json
+body:
+  type: json
+  content: |-
+    {
+      "username": "{{username}}",
+      "password": "{{password}}"
+    }
+scripts:
+  - type: afterResponse
+    language: text/javascript
+    code: |-
+      pm.test("Status code is 200", function () {
+        pm.response.to.have.status(200);
+      });
+      
+      const jsonData = pm.response.json();
+      
+      ["access", "refresh"].forEach((field) => {
+        pm.test(`Response has ${field}`, function () {
+          pm.expect(jsonData).to.have.property(field);
+          pm.expect(jsonData[field]).to.be.a("string").and.not.empty;
+        });
+      });
+      
+      if (jsonData.access) {
+        pm.environment.set("accessToken", jsonData.access);
+      }
+      
+      if (jsonData.refresh) {
+        pm.environment.set("refreshToken", jsonData.refresh);
+      }
