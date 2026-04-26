@@ -1,0 +1,17 @@
+info:
+  name: Get Profile copy
+  type: http
+  seq: 39
+
+http:
+  method: GET
+  url: http://127.0.0.1:8000/api/users/profile/
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MDI5NzUyLCJpYXQiOjE3NzY5NDMzNTIsImp0aSI6ImI3YTNiNGNjM2E2YTQ5NzlhYzEwMzBkZjNjMDMyMjdiIiwidXNlcl9pZCI6M30.pn_2gRmDmvEwlet-ctsjYjkbNA5iHyeAisB2gYh2IxA
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

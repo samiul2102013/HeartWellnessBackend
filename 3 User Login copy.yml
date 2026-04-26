@@ -1,0 +1,24 @@
+info:
+  name: 3 User Login copy
+  type: http
+  seq: 27
+
+http:
+  method: POST
+  url: http://localhost:8000/api/auth/login/
+  body:
+    type: json
+    data: |-
+      {
+        "username": "test",
+        "password": "Test123!"
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MjgyMjQ0LCJpYXQiOjE3NzcxOTU4NDQsImp0aSI6ImM4YjRhMDE0ZjEyMjRiOGRiY2M3Y2UzYzM1NjBiYzRhIiwidXNlcl9pZCI6MTF9.fXb6heOSc-ki6LSF69sN3XFKxIkMohn3bH5aeZEWEwk
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
