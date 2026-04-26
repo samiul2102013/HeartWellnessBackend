@@ -1,7 +1,7 @@
 info:
-  name: Bruno APIs
+  name: Auth APIs
   type: folder
-  seq: 5
+  seq: 3
 
 request:
   auth: inherit

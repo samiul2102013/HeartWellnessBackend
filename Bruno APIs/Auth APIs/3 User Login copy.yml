@@ -1,7 +1,7 @@
 info:
   name: 3 User Login copy
   type: http
-  seq: 27
+  seq: 8
 
 http:
   method: POST
