@@ -1,0 +1,21 @@
+info:
+  name: 2--Emial verify
+  type: http
+  seq: 1
+
+http:
+  method: POST
+  url: http://localhost:8000/api/auth/verify-email/
+  body:
+    type: json
+    data: |-
+      {
+        "token": "a4c5995c-192f-487a-9a7e-7e7056c2fc6b"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
