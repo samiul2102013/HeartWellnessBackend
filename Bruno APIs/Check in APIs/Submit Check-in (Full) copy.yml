@@ -1,0 +1,29 @@
+info:
+  name: Submit Check-in (Full) copy
+  type: http
+  seq: 39
+
+http:
+  method: POST
+  url: http://127.0.0.1:8000/api/checkins/
+  body:
+    type: json
+    data: |-
+      {
+        "mood": 1,
+        "mental_clarity": 8,
+        "emotional_balance": 7,
+        "spiritual_wellness": 9,
+        "physical_energy": 6,
+        "gratitude": "Grateful for my family and health today.",
+        "notes": "Had a productive morning session."
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MDMwNjg4LCJpYXQiOjE3NzY5NDMzNTIsImp0aSI6IjA5MDE3NGIxNzNiYTQ1MzdhMTkzNmJkMDYyNDAyYTI2IiwidXNlcl9pZCI6M30.uMXysLltXKsWCR0jiHD75tLif9I8Ua7nPyrn7pfzdaw
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,26 @@
+info:
+  name: "Create Habit 1: Morning Run"
+  type: http
+  seq: 22
+
+http:
+  method: POST
+  url: http://127.0.0.1:8000/api/habits/
+  body:
+    type: json
+    data: |-
+      {
+        "category": 1,
+        "activity_name": "Morning Run",
+        "description": "30 minute jog around the park every morning",
+        "duration": 30
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MjcxOTQ2LCJpYXQiOjE3NzcxODU1NDYsImp0aSI6IjI2NmVjZDdmM2Q5YTQ1NmFhZTdhNzViM2FlYmFhYTkxIiwidXNlcl9pZCI6NX0.UdaaMSRUINBlnY1eKmBCjBdJUUCIhKLqIK1Ado-fjOw
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
