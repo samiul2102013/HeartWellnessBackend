@@ -25,6 +25,7 @@ THIRD_PARTY_APPS = [
     'corsheaders',
     'django_filters',
     'drf_spectacular',
+    'channels',
 ]
 
 LOCAL_APPS = [
@@ -104,3 +105,29 @@ TEMPLATES = [{
         ],
     },
 }]
+
+
+# Email — add at the bottom of config/settings.py
+FRONTEND_URL = os.getenv('FRONTEND_URL', 'http://localhost:3000')
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'noreply@heartbeatharmony.com')
+
+
+
+# Channels
+ASGI_APPLICATION = 'config.asgi.application'
+
+# In-memory for dev — swap to Redis in production
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+    }
+}
+
+# Production Redis swap:
+# CHANNEL_LAYERS = {
+#     'default': {
+#         'BACKEND': 'channels_redis.core.RedisChannelLayer',
+#         'CONFIG': {'hosts': [('127.0.0.1', 6379)]},
+#     }
+# }

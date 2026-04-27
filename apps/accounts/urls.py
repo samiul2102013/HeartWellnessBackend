@@ -8,6 +8,14 @@ urlpatterns = [
     path('auth/login/', views.LoginView.as_view()),
     path('auth/token/refresh/', TokenRefreshView.as_view()),
 
+    # Email verification
+    path('auth/verify-email/', views.VerifyEmailView.as_view()),
+    path('auth/resend-verification/', views.ResendVerificationEmailView.as_view()),
+
+    # Forgot / Reset password
+    path('auth/forgot-password/', views.ForgotPasswordView.as_view()),
+    path('auth/reset-password/', views.ResetPasswordView.as_view()),
+
     # User
     path('users/profile/', views.ProfileView.as_view()),
     path('users/change-password/', views.ChangePasswordView.as_view()),

@@ -18,6 +18,14 @@ class User(AbstractUser):
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    
+    #email verification fields
+    email_verified = models.BooleanField(default=False)
+    email_verify_token = models.CharField(max_length=64, blank=True, null=True)
+    
+    #password reset fields
+    password_reset_token = models.CharField(max_length=64, blank=True, null=True)
+    password_reset_token_created = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         db_table = 'users'

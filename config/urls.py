@@ -8,10 +8,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('apps.accounts.urls')),
     path('api/', include('apps.checkins.urls')),
-    # Future: habits, study, community, pricing
-    # path('api/', include('apps.habits.urls')),
-    # path('api/', include('apps.study.urls')),
-    # path('api/', include('apps.community.urls')),
+    # Enabled app routes
+    path('api/', include('apps.habits.urls')),
+    # Future: study, community, pricing
+    path('api/', include('apps.study.urls')),
+    path('api/', include('apps.community.urls')),
     # path('api/', include('apps.pricing.urls')),
 
     # API Docs

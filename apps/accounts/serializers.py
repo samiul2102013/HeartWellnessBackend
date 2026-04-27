@@ -39,19 +39,38 @@ class UserProfileSerializer(serializers.ModelSerializer):
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(write_only=True)
     new_password = serializers.CharField(write_only=True, validators=[validate_password])
-
+ 
     def validate_old_password(self, value):
         user = self.context['request'].user
         if not user.check_password(value):
             raise serializers.ValidationError('Old password is incorrect.')
         return value
 
-    def update(self, instance, validated_data):
-        instance.set_password(validated_data['new_password'])
-        instance.save()
-        return instance
-
-
+# ── Email verification ────────────────────────────────────────
+ 
+class VerifyEmailSerializer(serializers.Serializer):
+    token = serializers.UUIDField()
+ 
+ 
+# ── Forgot / Reset password ───────────────────────────────────
+ 
+class ForgotPasswordSerializer(serializers.Serializer):
+    email = serializers.EmailField()
+ 
+    def validate_email(self, value):
+        value = value.lower().strip()
+        if not User.objects.filter(email=value).exists():
+            # Return same message to avoid user enumeration
+            raise serializers.ValidationError(
+                'If this email exists, a reset link will be sent.'
+            )
+        return value
+ 
+ 
+class ResetPasswordSerializer(serializers.Serializer):
+    token = serializers.UUIDField()
+    new_password = serializers.CharField(write_only=True, validators=[validate_password])
+ 
 # Admin serializers
 class AdminUserSerializer(serializers.ModelSerializer):
     class Meta:
