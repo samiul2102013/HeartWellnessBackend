@@ -13,7 +13,7 @@ urlpatterns = [
     # Future: study, community, pricing
     path('api/', include('apps.study.urls')),
     path('api/', include('apps.community.urls')),
-    # path('api/', include('apps.pricing.urls')),
+    path('api/', include('apps.pricing.urls')),
 
     # API Docs
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
