@@ -1,0 +1,20 @@
+info:
+  name: Subscription History
+  type: http
+  seq: 6
+
+http:
+  method: GET
+  url: http://127.0.0.1:8000/api/pricing/history/
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NDQ3Mzk4LCJpYXQiOjE3NzczNjA5OTgsImp0aSI6ImUyZTE1NzM4NDk3ZTQzOTRiNGYyNzg5MTI3NTM0MWJhIiwidXNlcl9pZCI6MTN9.899VeqpHiBFxaL9GrqqeJMQxfYU4HRAFMKeLyt8eIPA
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

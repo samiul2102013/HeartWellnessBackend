@@ -1,0 +1,17 @@
+info:
+  name: List Moods copy
+  type: http
+  seq: 39
+
+http:
+  method: GET
+  url: http://127.0.0.1:8000/api/moods/
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MDMwNjg4LCJpYXQiOjE3NzY5NDMzNTIsImp0aSI6IjA5MDE3NGIxNzNiYTQ1MzdhMTkzNmJkMDYyNDAyYTI2IiwidXNlcl9pZCI6M30.uMXysLltXKsWCR0jiHD75tLif9I8Ua7nPyrn7pfzdaw
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

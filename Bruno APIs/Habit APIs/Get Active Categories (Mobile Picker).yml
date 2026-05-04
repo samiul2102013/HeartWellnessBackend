@@ -1,0 +1,17 @@
+info:
+  name: Get Active Categories (Mobile Picker)
+  type: http
+  seq: 22
+
+http:
+  method: GET
+  url: http://127.0.0.1:8000/api/categories/
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MjcxOTQ2LCJpYXQiOjE3NzcxODU1NDYsImp0aSI6IjI2NmVjZDdmM2Q5YTQ1NmFhZTdhNzViM2FlYmFhYTkxIiwidXNlcl9pZCI6NX0.UdaaMSRUINBlnY1eKmBCjBdJUUCIhKLqIK1Ado-fjOw
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

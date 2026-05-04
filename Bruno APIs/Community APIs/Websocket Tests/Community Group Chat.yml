@@ -1,0 +1,24 @@
+info:
+  name: Community Group Chat
+  type: http
+  seq: 1
+
+http:
+  method: CONNECT
+  url: ws://127.0.0.1:8000/ws/community/?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MzcwMjYwLCJpYXQiOjE3NzcyODM4NjAsImp0aSI6IjE4Y2ZlZDRjNjYyMjQ2MmU4OTFlZGRkNjFhMDM0MDdiIiwidXNlcl9pZCI6MTJ9.DOsOyW2erX-31BwtKxaE5-nEc3-6TI2kDo-p1O1lOx0
+  params:
+    - name: token
+      value: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MzcwMjYwLCJpYXQiOjE3NzcyODM4NjAsImp0aSI6IjE4Y2ZlZDRjNjYyMjQ2MmU4OTFlZGRkNjFhMDM0MDdiIiwidXNlcl9pZCI6MTJ9.DOsOyW2erX-31BwtKxaE5-nEc3-6TI2kDo-p1O1lOx0
+      type: query
+  body:
+    type: json
+    data: '{ "content": "Hello HeartbeatHarmony community! 💚" }'
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MzcwMjYwLCJpYXQiOjE3NzcyODM4NjAsImp0aSI6IjE4Y2ZlZDRjNjYyMjQ2MmU4OTFlZGRkNjFhMDM0MDdiIiwidXNlcl9pZCI6MTJ9.DOsOyW2erX-31BwtKxaE5-nEc3-6TI2kDo-p1O1lOx0
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,7 @@
+info:
+  name: Habit APIs
+  type: folder
+  seq: 1
+
+request:
+  auth: inherit

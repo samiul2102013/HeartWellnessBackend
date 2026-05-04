@@ -1,0 +1,20 @@
+info:
+  name: Cancel Subscription
+  type: http
+  seq: 5
+
+http:
+  method: POST
+  url: http://127.0.0.1:8000/api/pricing/cancel/
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NDQ3Mzk4LCJpYXQiOjE3NzczNjA5OTgsImp0aSI6ImUyZTE1NzM4NDk3ZTQzOTRiNGYyNzg5MTI3NTM0MWJhIiwidXNlcl9pZCI6MTN9.899VeqpHiBFxaL9GrqqeJMQxfYU4HRAFMKeLyt8eIPA
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
