@@ -1,0 +1,17 @@
+info:
+  name: Check Current Subscription
+  type: http
+  seq: 2
+
+http:
+  method: GET
+  url: http://127.0.0.1:8000/api/pricing/my-subscription/
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NDQ2NTg4LCJpYXQiOjE3NzczNjAxODgsImp0aSI6ImNkYmM3NjUzYjFhMzRiOTY4NWRiMjVlMDM2MmM1OGFiIiwidXNlcl9pZCI6MTN9.qFaBWHwRH9ed5zhvYz4oJ1eTPbZeHbwqnA-pwUQDaaY
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

@@ -1,0 +1,20 @@
+info:
+  name: List Quizzes
+  type: http
+  seq: 5
+
+http:
+  method: GET
+  url: http://127.0.0.1:8000/api/study/quizzes/
+  body:
+    type: json
+    data: ""
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MzcwMjYwLCJpYXQiOjE3NzcyODM4NjAsImp0aSI6IjE4Y2ZlZDRjNjYyMjQ2MmU4OTFlZGRkNjFhMDM0MDdiIiwidXNlcl9pZCI6MTJ9.DOsOyW2erX-31BwtKxaE5-nEc3-6TI2kDo-p1O1lOx0
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

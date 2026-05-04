@@ -1,0 +1,29 @@
+info:
+  name: Submit Quiz
+  type: http
+  seq: 7
+
+http:
+  method: POST
+  url: http://127.0.0.1:8000/api/study/quizzes/submit/
+  body:
+    type: json
+    data: |-
+      {
+        "quiz_id": 1,
+        "answers": [
+          { "question_id": 1, "selected_option": "B" },
+          { "question_id": 2, "selected_option": "A" },
+          { "question_id": 3, "selected_option": "C" },
+          { "question_id": 4, "selected_option": "B" }
+        ]
+      }
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3MzcwMjYwLCJpYXQiOjE3NzcyODM4NjAsImp0aSI6IjE4Y2ZlZDRjNjYyMjQ2MmU4OTFlZGRkNjFhMDM0MDdiIiwidXNlcl9pZCI6MTJ9.DOsOyW2erX-31BwtKxaE5-nEc3-6TI2kDo-p1O1lOx0
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

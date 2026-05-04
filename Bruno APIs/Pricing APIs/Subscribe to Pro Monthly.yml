@@ -1,0 +1,20 @@
+info:
+  name: Subscribe to Pro Monthly
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: http://127.0.0.1:8000/api/pricing/subscribe/
+  body:
+    type: json
+    data: '{ "plan_id": 2 }'
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc3NDQ2NTg4LCJpYXQiOjE3NzczNjAxODgsImp0aSI6ImNkYmM3NjUzYjFhMzRiOTY4NWRiMjVlMDM2MmM1OGFiIiwidXNlcl9pZCI6MTN9.qFaBWHwRH9ed5zhvYz4oJ1eTPbZeHbwqnA-pwUQDaaY
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
